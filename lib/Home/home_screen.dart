@@ -3,11 +3,43 @@ import 'package:fudge/Controller/userDetail_Controller.dart';
 import 'package:fudge/Costome_widgets/common_widget.dart';
 import 'package:fudge/Home/chart.dart';
 import 'package:get/get.dart';
+import 'package:time_chart/time_chart.dart';
 import 'my_saved_cards.dart';
 
 // ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   UserController controller = Get.put(UserController());
+
+  final data = [
+    DateTimeRange(
+      start: DateTime(2021, 2, 24, 23, 15),
+      end: DateTime(2021, 2, 25, 7, 30),
+    ),
+    DateTimeRange(
+      start: DateTime(2021, 2, 22, 1, 55),
+      end: DateTime(2021, 2, 22, 9, 12),
+    ),
+    DateTimeRange(
+      start: DateTime(2021, 2, 20, 0, 25),
+      end: DateTime(2021, 2, 20, 7, 34),
+    ),
+    DateTimeRange(
+      start: DateTime(2021, 2, 17, 21, 23),
+      end: DateTime(2021, 2, 18, 4, 52),
+    ),
+    DateTimeRange(
+      start: DateTime(2021, 2, 13, 6, 32),
+      end: DateTime(2021, 2, 13, 13, 12),
+    ),
+    DateTimeRange(
+      start: DateTime(2021, 2, 1, 9, 32),
+      end: DateTime(2021, 2, 1, 15, 22),
+    ),
+    DateTimeRange(
+      start: DateTime(2021, 1, 22, 12, 10),
+      end: DateTime(2021, 1, 22, 16, 20),
+    ),
+  ];
 
   List<String> imageList = [
     "assets/user_01.png",
@@ -55,21 +87,28 @@ class HomePage extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                               text: 'Hola, ',
-                              style: Theme.of(context).textTheme.headline4!.copyWith(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline4!
+                                  .copyWith(
                                     color: Theme.of(context).canvasColor,
                                     fontWeight: FontWeight.bold,
                                   ),
                               children: const <TextSpan>[
-                                TextSpan(text: 'Michael', style: TextStyle(fontWeight: FontWeight.normal)),
+                                TextSpan(
+                                    text: 'Michael',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.normal)),
                               ],
                             ),
                           ),
                           SizedBox(height: 5),
                           Text(
                             'Te tenemos excelentes noticias para ti',
-                            style: Theme.of(context).textTheme.caption!.copyWith(
-                                  color: Theme.of(context).canvasColor,
-                                ),
+                            style:
+                                Theme.of(context).textTheme.caption!.copyWith(
+                                      color: Theme.of(context).canvasColor,
+                                    ),
                           ),
                         ],
                       ),
@@ -85,7 +124,8 @@ class HomePage extends StatelessWidget {
                             SizedBox(width: 20),
                             CircleAvatar(
                               radius: 10,
-                              backgroundImage: AssetImage("assets/profile_00.png"),
+                              backgroundImage:
+                                  AssetImage("assets/profile_00.png"),
                             )
                           ],
                         ),
@@ -108,7 +148,12 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           '+\$9,736',
-                          style: Theme.of(context).textTheme.headline4!.copyWith(color: Theme.of(context).canvasColor, fontSize: 16),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline4!
+                              .copyWith(
+                                  color: Theme.of(context).canvasColor,
+                                  fontSize: 16),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
@@ -125,12 +170,16 @@ class HomePage extends StatelessWidget {
                         ),
                         Text(
                           '2.3%',
-                          style: Theme.of(context).textTheme.headline4!.copyWith(color: Color(0xff3cd942), fontSize: 16),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline4!
+                              .copyWith(color: Color(0xff3cd942), fontSize: 16),
                         ),
                       ],
                     ),
                   ),
-                  Text("ACCOUNT BALANCE", style: Theme.of(context).textTheme.headline2!),
+                  Text("ACCOUNT BALANCE",
+                      style: Theme.of(context).textTheme.headline2!),
                   SizedBox(height: 30),
                   SizedBox(
                     height: 50,
@@ -142,10 +191,15 @@ class HomePage extends StatelessWidget {
                           children: [
                             Text(
                               '12',
-                              style:
-                                  Theme.of(context).textTheme.headline4!.copyWith(color: Theme.of(context).canvasColor, fontWeight: FontWeight.bold),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline4!
+                                  .copyWith(
+                                      color: Theme.of(context).canvasColor,
+                                      fontWeight: FontWeight.bold),
                             ),
-                            Text('Following', style: Theme.of(context).textTheme.headline2!),
+                            Text('Following',
+                                style: Theme.of(context).textTheme.headline2!),
                           ],
                         ),
                         VerticalDivider(
@@ -159,10 +213,15 @@ class HomePage extends StatelessWidget {
                           children: [
                             Text(
                               '36',
-                              style:
-                                  Theme.of(context).textTheme.headline4!.copyWith(color: Theme.of(context).canvasColor, fontWeight: FontWeight.bold),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline4!
+                                  .copyWith(
+                                      color: Theme.of(context).canvasColor,
+                                      fontWeight: FontWeight.bold),
                             ),
-                            Text('Transactions', style: Theme.of(context).textTheme.headline2!),
+                            Text('Transactions',
+                                style: Theme.of(context).textTheme.headline2!),
                           ],
                         ),
                         VerticalDivider(
@@ -176,10 +235,15 @@ class HomePage extends StatelessWidget {
                           children: [
                             Text(
                               '4',
-                              style:
-                                  Theme.of(context).textTheme.headline4!.copyWith(color: Theme.of(context).canvasColor, fontWeight: FontWeight.bold),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline4!
+                                  .copyWith(
+                                      color: Theme.of(context).canvasColor,
+                                      fontWeight: FontWeight.bold),
                             ),
-                            Text('     Bills     ', style: Theme.of(context).textTheme.headline2!),
+                            Text('     Bills     ',
+                                style: Theme.of(context).textTheme.headline2!),
                           ],
                         ),
                       ],
@@ -208,11 +272,15 @@ class HomePage extends StatelessWidget {
                     child: MaterialButton(
                       padding: EdgeInsets.all(0),
                       color: Color(0xffb4b9d1),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(8))),
                       onPressed: () {},
                       child: Text(
                         "More".toUpperCase(),
-                        style: Theme.of(context).textTheme.headline1!.copyWith(color: Colors.white),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline1!
+                            .copyWith(color: Colors.white),
                       ),
                     ),
                   ),
@@ -220,9 +288,16 @@ class HomePage extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                decoration: BoxDecoration(color: Color(0xffcfd3e7), borderRadius: BorderRadius.circular(15)),
-                height: 200,
-                child: Sparkine(),
+                padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
+                decoration: BoxDecoration(
+                    color: Color(0xffcfd3e7),
+                    borderRadius: BorderRadius.circular(10)),
+                child: TimeChart(
+                  data: data,
+                  chartType: ChartType.amount,
+                  viewMode: ViewMode.weekly,
+                  barColor: Color(0xff171d3c),
+                ),
               ),
             ],
           ),
@@ -279,7 +354,8 @@ class HomePage extends StatelessWidget {
                     child: MaterialButton(
                       padding: EdgeInsets.all(0),
                       color: Color(0xffb4b9d1),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(8))),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -290,7 +366,10 @@ class HomePage extends StatelessWidget {
                       },
                       child: Text(
                         "More".toUpperCase(),
-                        style: Theme.of(context).textTheme.headline1!.copyWith(color: Colors.white),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline1!
+                            .copyWith(color: Colors.white),
                       ),
                     ),
                   ),
@@ -306,7 +385,8 @@ class HomePage extends StatelessWidget {
                   children: [
                     Text(
                       "Financial Goals".toUpperCase(),
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                     ),
                   ],
                 ),
