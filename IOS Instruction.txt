@@ -1,0 +1,12 @@
+Instruction To Run Flutter App In To IOS
+
+1. Open VisualStudioCode
+2. Add Libraries for Internet permission in Info.plist
+    (Ios->Runner->Info.plist)
+3. Project On Xocde
+4. Set Developer Account 
+5. Set Ios Version and set App Name
+6. Open Simulator / Connect Ios Device to Mac
+7. Give Permission to run in ios Device to Enable
+8. Run The Code
+9. Output
